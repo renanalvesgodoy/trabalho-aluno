@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class TesteAluno {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        Aluno aluno = new Aluno();
+
+        System.out.print("Digite o nome do aluno: ");
+        aluno.setNome(scanner.nextLine());
+
+        System.out.print("Digite a matrícula do aluno: ");
+        aluno.setMatricula(scanner.nextLine());
+
+        System.out.print("Digite o sexo do aluno (M/F): ");
+        aluno.setSexo(scanner.nextLine());
+
+        System.out.print("Digite a data de nascimento (dd/MM/yyyy): ");
+        aluno.setDataNascimento(scanner.nextLine());
+
+        System.out.print("Digite o curso do aluno: ");
+        aluno.setCurso(scanner.nextLine());
+
+        System.out.print("Digite o ano de início do aluno: ");
+        aluno.setAnoInicio(scanner.nextInt());
+
+        System.out.print("Digite a nota da Prova 1: ");
+        aluno.setNotaProva1(scanner.nextDouble());
+
+        System.out.print("Digite a nota da Prova 2: ");
+        aluno.setNotaProva2(scanner.nextDouble());
+
+        System.out.print("Digite a média das notas dos Trabalhos: ");
+        aluno.setMediaTrabalhos(scanner.nextDouble());
+
+        System.out.println("\n--- Informações do Aluno ---");
+        System.out.println("Nome: " + aluno.getNome());
+        System.out.println("Matrícula: " + aluno.getMatricula());
+        System.out.println("Sexo: " + aluno.getSexo());
+        System.out.println("Data de Nascimento: " + aluno.getDataNascimento());
+        System.out.println("Curso: " + aluno.getCurso());
+        System.out.println("Ano de Início: " + aluno.getAnoInicio());
+        System.out.println("Nota Prova 1: " + aluno.getNotaProva1());
+        System.out.println("Nota Prova 2: " + aluno.getNotaProva2());
+        System.out.println("Média dos Trabalhos: " + aluno.getMediaTrabalhos());
+
+        if (aluno.estaAprovado()) {
+            System.out.println("\nO aluno " + aluno.getNome() + " foi aprovado!");
+        } else {
+            System.out.println("\nO aluno " + aluno.getNome() + " não foi aprovado.");
+        }
+
+        scanner.close();
+    }
+}
